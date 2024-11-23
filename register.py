@@ -31,6 +31,8 @@ def create_user():
     email = request.form.get('email')
     telefone = request.form.get('telefone')
 
+
+
     # Verificar se os campos obrigatórios foram enviados
     if not all([nome, email, telefone]):
       return jsonify({'error': 'Nome, email e telefone são obrigatórios'}), 400
@@ -40,6 +42,11 @@ def create_user():
       return jsonify({'error': 'Nenhuma foto enviada'}), 400
 
     foto = request.files['foto']
+
+    print(nome)
+    print(email)
+    print(telefone)
+    print(foto)
 
 
     # Gerar UUID para o usuário
